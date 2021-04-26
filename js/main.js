@@ -191,3 +191,47 @@ function searchTable() {
 				}
 			}
 		}
+// Generate random data		
+function capFirst(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function getRandomInt(min, max) {
+  	return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function GetRandom(){
+	const bigAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	var name1 = ["Adam","Adolf","Adrian","Albert","Aleksander","Aleksy","Alfred","Amadeusz","Andrzej","Antoni","Arkadiusz","Arnold","Artur","Bartłomiej","Bartosz","Benedykt","Beniamin","Bernard","Błażej","Bogdan","Bogumił","Bogusław","Bolesław","Borys","Bronisław","Cezary","Cyprian","Cyryl","Czesław","Damian","Daniel","Dariusz","Dawid","Dionizy","Dominik","Donald"];
+	var name2 = ["Nowak","Kowalski","Wiśniewski","Wójcik","Kowalczyk","Lewandowski","Zieliński","Szymański","Woźniak","Dąbrowski","Kozłowski","Jankowski","Mazur","Wojciechowski","Kwiatkowski","Krawczyk","Kaczmarek","Piotrowski","Grabowski","Zając"];
+	var name = capFirst(name1[getRandomInt(0, name1.length + 1)]) + ' ' + capFirst(name2[getRandomInt(0, name2.length + 1)]);
+	
+	var City1 = ["Łódź","Warszawa","Wrocław","Gdańsk","Pabianice","Gdynia","Poznań"];
+	var City = capFirst(City1[getRandomInt(0, City1.length + 1)]);
+	
+	var adress1 = ["Wólczańska","Racławicka","Pabianicka","AlejaPolitechniki","Piotrkowska","Narutowicza","Radwańska","Przmysłowa"];
+	var adress = capFirst(adress1[getRandomInt(0, City1.length + 1)]) + ' ' + getRandomIntInclusive(1, 222);
+	
+	var myElement1 = document.getElementById("name")
+        myElement1.value = name;
+	var myElement2 = document.getElementById("city")
+        myElement2.value = City;
+	var myElement3 = document.getElementById("adress")
+        myElement3.value = adress;
+	var myElement4 = document.getElementById("email")
+        myElement4.value = Math.random().toString(36).substring(2, 5) + Math.random().toString(36).substring(2, 5) + '@gmail.com';
+	var myElement5 = document.getElementById("postal_code")
+        myElement5.value = (Math.floor(Math.random() * 89 + 10) + '-' + Math.floor(Math.random() * 899 + 100)).toString();
+	var myElement6 = document.getElementById("nip_number")
+        myElement6.value = Math.floor(Math.random() * 899 + 100).toString() + '-' + Math.floor(Math.random() * 899 + 100).toString() + '-' + Math.floor(Math.random() * 89 + 10).toString() + '-' + Math.floor(Math.random() * 89 + 10).toString();
+	var myElement7 = document.getElementById("phone_number")
+        myElement7.value = Math.floor(Math.random() * 899 + 100).toString() + '-' + Math.floor(Math.random() * 899 + 100).toString() + '-' + Math.floor(Math.random() * 899 + 100).toString();
+	var myElement8 = document.getElementById("id_card")
+        myElement8.value = bigAlphabet[Math.floor(Math.random() * bigAlphabet.length)] + bigAlphabet[Math.floor(Math.random() * bigAlphabet.length)] + bigAlphabet[Math.floor(Math.random() * bigAlphabet.length)] + Math.floor(Math.random() * 899999 + 100000).toString();
+}
